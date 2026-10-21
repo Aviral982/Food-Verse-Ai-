@@ -126,3 +126,4 @@ If is_food is false, all nutrition numbers can be null and provide explanation i
             allergens=result.get("allergens", []),
             message=result.get("message")
         )
+

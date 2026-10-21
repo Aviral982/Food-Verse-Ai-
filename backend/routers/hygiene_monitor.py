@@ -161,3 +161,4 @@ Provide your hygiene audit strictly in this JSON format:
             observations=result.get("observations", ["Kitchen surfaces observed"]),
             recommendations=result.get("recommendations", ["Maintain standard sanitization schedule"])
         )
+

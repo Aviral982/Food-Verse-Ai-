@@ -17,3 +17,4 @@ services:
         value: whisper-large-v3
       - key: ENVIRONMENT
         value: production
+

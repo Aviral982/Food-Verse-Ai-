@@ -267,3 +267,4 @@ Verifies zero JSX errors, full Vite module tree resolution, and Tailwind CSS out
 2. **Nutritional Approximations**: Calorie and macronutrient estimations are calculated using AI visual volume heuristics. Actual nutritional values may differ depending on unseen cooking oils, sugars, and exact portion weight.
 3. **Clinical Advice**: The personalized meal planner provides nutritional guidelines for educational and personal health tracking only. Users with severe metabolic conditions (e.g. Type 1 Diabetes, advanced renal disease) should consult their physician or a registered dietitian.
 4. **Live AI Verification**: To enable live AI inferences, set a valid `GROQ_API_KEY` in `backend/.env`. When no key is set, the system safely returns descriptive `503 Service Unavailable` responses explaining setup instructions.
+

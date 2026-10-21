@@ -38,3 +38,4 @@ class Settings:
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
 
 settings = Settings()
+

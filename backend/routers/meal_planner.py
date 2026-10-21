@@ -165,3 +165,4 @@ Respond strictly with a JSON object adhering to this schema:
             status_code=502,
             detail=f"Failed to generate structured meal plan: {str(e)}"
         )
+

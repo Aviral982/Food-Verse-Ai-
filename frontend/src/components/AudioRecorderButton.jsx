@@ -129,3 +129,4 @@ export default function AudioRecorderButton({ onAudioCaptured, onAudioCleared, d
     </div>
   );
 }
+

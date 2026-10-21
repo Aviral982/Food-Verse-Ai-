@@ -117,3 +117,4 @@ Respond strictly with a JSON object in this format:
             chef_tips=result.get("chef_tips", []),
             nutritional_highlights=result.get("nutritional_highlights")
         )
+

@@ -106,3 +106,4 @@ if __name__ == "__main__":
     test_meal_planner_validation()
     test_unconfigured_ai_handling()
     print("\nALL API VALIDATION & FAILURE TESTS PASSED!")
+

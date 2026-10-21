@@ -113,3 +113,4 @@ Provide your evaluation strictly as JSON matching this format:
             estimated_shelf_life=result.get("estimated_shelf_life", "1-2 days"),
             disclaimer="Notice: AI image analysis provides visual estimates only and cannot detect microscopic bacterial, fungal, or toxin contamination. When in doubt regarding odor, texture, or safety, discard the food."
         )
+
