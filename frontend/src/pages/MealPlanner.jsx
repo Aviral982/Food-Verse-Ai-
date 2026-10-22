@@ -257,20 +257,24 @@ export default function MealPlanner() {
               </div>
             </div>
 
-            {/* Allergies - Critical */}
+            {/* Allergies & Intolerances */}
             <div>
-              <label className="block text-xs font-medium text-rose-300 mb-1 flex items-center gap-1.5">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-                Allergies & Intolerances (Crucial)
+              <label className="block text-xs font-medium text-slate-300 mb-1 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                Allergies & Food Intolerances
+                <span className="text-[10px] text-slate-400 font-normal">(Leave blank if none)</span>
               </label>
               <input
                 type="text"
                 name="allergies"
-                placeholder="e.g. Peanuts, Tree Nuts, Shellfish, Gluten, Lactose..."
+                placeholder="e.g. Peanuts, Shellfish, Gluten, Dairy (or leave empty)"
                 value={formData.allergies}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-xl bg-slate-900/80 border border-rose-500/40 text-slate-100 text-xs focus:outline-none focus:border-rose-400 placeholder-slate-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-blue-500/50 placeholder-slate-500"
               />
+              <p className="text-[11px] text-slate-400 mt-1">
+                Ingredients specified here will be strictly omitted from all 5 daily meals.
+              </p>
             </div>
 
             {/* Pre-existing conditions */}

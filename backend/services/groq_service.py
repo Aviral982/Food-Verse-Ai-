@@ -130,6 +130,21 @@ class GroqService:
             raw_content = response.choices[0].message.content or "{}"
             return self._extract_json(raw_content)
         except Exception as e:
+            # Fallback if configured model is decommissioned or not found
+            err_str = str(e).lower()
+            if ("model" in err_str and ("decommissioned" in err_str or "not found" in err_str or "not exist" in err_str)) and self.vision_model != "qwen/qwen3.8-27b":
+                try:
+                    response = client.chat.completions.create(
+                        model="qwen/qwen3.8-27b",
+                        messages=messages,
+                        response_format={"type": "json_object"},
+                        temperature=0.2,
+                        max_tokens=2048,
+                    )
+                    raw_content = response.choices[0].message.content or "{}"
+                    return self._extract_json(raw_content)
+                except Exception as inner_e:
+                    self._handle_groq_error(inner_e)
             self._handle_groq_error(e)
 
     async def generate_json(
@@ -158,6 +173,21 @@ class GroqService:
             raw_content = response.choices[0].message.content or "{}"
             return self._extract_json(raw_content)
         except Exception as e:
+            # Fallback if configured model is decommissioned or not found
+            err_str = str(e).lower()
+            if ("model" in err_str and ("decommissioned" in err_str or "not found" in err_str or "not exist" in err_str)) and self.text_model != "qwen/qwen3.8-27b":
+                try:
+                    response = client.chat.completions.create(
+                        model="qwen/qwen3.8-27b",
+                        messages=messages,
+                        response_format={"type": "json_object"},
+                        temperature=0.3,
+                        max_tokens=3072,
+                    )
+                    raw_content = response.choices[0].message.content or "{}"
+                    return self._extract_json(raw_content)
+                except Exception as inner_e:
+                    self._handle_groq_error(inner_e)
             self._handle_groq_error(e)
 
     async def transcribe_audio(self, audio_bytes: bytes, filename: str = "voice_input.webm") -> str:
